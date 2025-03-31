@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" th:replace="base::layout(~{::section})" >
+<head>
+	<meta charset="UTF-8" />
+	<title>Signup</title>
+</head>
+<body>
+	<section>
+	 <div class="container">
+	 <div class="col-md-8 offset-md-2">
+	 <div class="my-card mt-3">
+	 <div class="container text-center">
+	 <img class="" style="width:80px" th:src="@{/img/f.png}"/>
+	 
+	 </div>
+	 <h1 class="text-ceneter">Register Here</h1>
+	 
+	 
+	 <form action="" th:action="@{/do_register}" method="post" th:object="${user}">
+	 
+	 <div class="form-group">
+	 
+     <label for="name_field">Your Name</label>
+     <input type="text"
+     name="name"
+     class="form-control" 
+     id="name_field" 
+     aria-describedby="emailHelp" 
+     placeholder="Enter Name" required="required" th:value="${user.name}"/>
+     
+     
+     <label for="name_field">Your Email</label>
+     <input type="text"
+     name="email"
+     class="form-control" 
+     id="email_field" 
+     aria-describedby="emailHelp" 
+     placeholder="Enter Email"
+     th:value="${user.email}"
+     required="required"/>
+     
+     <label for="name_field">Your password</label>
+     <input type="password"
+     name="password"
+     class="form-control" 
+     id="password_field" 
+     aria-describedby="emailHelp" 
+     placeholder="Enter Password"
+     required="required"
+     th:value="${user.password}"
+      />
+      <label for="name_field">About</label>
+     <textarea name="acout" placeholder="Enter somethig  yourself " rows="10" class="form-control" ></textarea>
+
+     <input type="checkbox"
+     name="agreement"
+     class="form-check-inout"
+     id="agreement"/>
+     <lable for="agreement">Accept term and conditions</lable>
+     
+     
+ 
+     <div class="container text-center">
+     <button type="submit" class="btn bg-primary btn-block text-white ">Submit</button>
+     
+      
+     <button type="reset" class="btn btn-warning text-white btn-block">Reset</button>
+     </div>
+   	 </div>
+   </form>
+	 </div>
+	 </div>
+	 
+	 </div>
+	</section>
+</body>
+</html>
